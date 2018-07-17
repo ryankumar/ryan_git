@@ -1,0 +1,46 @@
+User psw-SAIRAM123
+
+admn pswd-SAIRAM@123
+$-USER COMAND
+#-admin cmnd
+~-home directory
+.- current directory
+..-previous directory
+/-root directory
+\-ESCAPe character
+ls - list of files/directory
+ls -a - lsit of all hiden files n all files
+ls -l -long list of files
+ls -t - list of recent most file
+ls -s - list of high to low byte size fils
+ls -lSr - list of revers size (low to high)
+ls -ltr -reverse time 
+cat-display all content
+tac-display reverse of all content 
+ls -lr -reverse long list
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+lxi h,4000h
+mvi a,15h
+mov m,a
+inx h
+mvi a,1ch
+mov m,a
+lhld 4000h
+xchg
+lxi h,4002h
+mvi a,0b7h
+mov m,a
+inx h
+mvi a,5ah
+mov m,a
+lhld 4002h
+mov a,e
+add l
+mov l,a
+mov a,d
+adc h
+mov h,a
+shld 4004h
+
+hlt

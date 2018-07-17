@@ -1,0 +1,13 @@
+first excute the app.c : gcc app.c
+			$ ./a.out
+here you will get to see that fd=-1,count=-1 and count=-1
+bcz in /dev there is no Mychar file. hence execute the char.c by following methods
+
+1st step: make (makfile)
+2nd step:sudo insmod char.ko
+3rd step:check device file is loaded or not according tp major number ($cat /proc/devices )
+4th step: execute $gcc app.c and open another terminal $sudo tail -f /var/log/syslog
+5th step: ./a.out
+here you will get outpit as fd=3,count=2,count=0 as file is loaded and observe another terminal also
+
+ 

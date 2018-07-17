@@ -1,0 +1,17 @@
+
+all:bin/main
+bin/main:main.o add.o sub.o
+	 gcc main.o add/add.o sub/sub.o -o bin/main
+main.o:main.c
+	gcc -c main.c
+add.o:
+	make -C add
+sub.o:
+	 make -C sub
+clean:
+	rm *.o bin/main
+	make -C add clean
+	make -C sub clean
+install:
+	sudo cp bin/main /usr/bin
+
