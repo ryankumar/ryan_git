@@ -1,0 +1,14 @@
+﻿
+1.Insertion case: if there is no node then insertion will be the 1st node;
+			Test : PASS
+
+2.printf case: if there is no node that means "root=NULL", 
+               it will print upto "node=NULL"
+		     TEST:PASS
+3.Swapping case: if there is only one node then swapping not possible,i.e root->next==NULL
+	         if node is at last,then also swapping not possible,i.e node->next==NULL
+	         
+		TEST:PASS
+4. Deletion case: if node is empty (root==NULL) or entered node is not available then deletion not possible
+		TEST:PASS
+		   
