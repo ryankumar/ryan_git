@@ -36,6 +36,7 @@ char   buff[100];
      {
      for(i=1;i<argc;i++)
 	{
+	    write(1,"\n******** NEW file is opend *******\n",33);
 	    fd[i]=open(argv[i],O_RDONLY); 
 	     if(fd[i]<0)
 	      {
@@ -48,7 +49,7 @@ char   buff[100];
 	         {
 	  	   write(1,&buff,1);
        		 }
-           write(1,"\n******** Another file is*******\n",33);
+//           write(1,"\n******** Another file is*******\n",33);
      	 }
 	
      }

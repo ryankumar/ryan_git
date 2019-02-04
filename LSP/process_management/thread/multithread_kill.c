@@ -24,9 +24,10 @@ void sigint()
 	count=1;
 }
 
+pthread_t thread,thread1,thread2;
 int main()
 {
-	pthread_t thread,thread1,thread2;
+//	pthread_t thread,thread1,thread2;
 	void * t_result, * t_result1;
 	int res;
 	signal(SIGINT,sigint);

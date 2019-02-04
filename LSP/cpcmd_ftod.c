@@ -1,3 +1,4 @@
+// copy  file to directory
 #include<unistd.h>
 #include<stdlib.h>
 #include<stdio.h>
@@ -30,7 +31,7 @@ int main(int argc,char* argv[])
         else
 	{
         	write(1,"Directory opened success\n",25);
-
+		// it opens the source file in dir,if not available then create the same file
 		fd1 = open(argv[1],O_WRONLY);
         	if(fd1 < 0)
         	{
