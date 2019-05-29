@@ -1,4 +1,5 @@
 #!/bin/sh
+# standard and normal variable : variable.sh
 myvar="hi there"
 #system defined variables
 echo shell pid : $$

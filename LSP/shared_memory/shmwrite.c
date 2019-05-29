@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include<sys/ipc.h>
 #include<sys/shm.h>
-#include<stdio.h>
-main()
+#include<string.h>
+main(int argc,char *argv[])
 {
 
 	int shmid;
@@ -14,9 +14,10 @@ main()
 	}
 	msg=shmat(shmid,0,0);
 	printf("Enter the data you want to write into shared memory\n");
-	fgets(msg,1024,stdin);
+//	fgets(msg,1024,stdin);
+	strcpy(msg,argv[1]);
 	printf("Data successfully written\n");
-	getchar();
+//	getchar();
 	shmdt(msg);
 
 }

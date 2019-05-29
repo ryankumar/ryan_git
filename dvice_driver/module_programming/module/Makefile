@@ -2,11 +2,11 @@
 obj-m += hello_init.o
 obj-m +=hello_exit.o
 all:
-	make -C /usr/src/linux-headers-`uname -r` M=`pwd` modules
+	make -C /usr/src/linux-headers-4.15.0-36-generic M=`pwd` modules
 	
 clean:
-	make -C /usr/src/linux-headers-`uname -r` M=`pwd` clean
+	make -C /usr/src/linux-headers-4.15.0-36-generic M=`pwd` clean
 install:
-	make -C /usr/src/linux-headers-`uname -r` M=`pwd` modules_install
+	make -C /usr/src/linux-headers-4.15.0-36-generic M=`pwd` modules_install
 
 

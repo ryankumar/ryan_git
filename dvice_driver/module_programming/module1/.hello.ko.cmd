@@ -1,1 +1,0 @@
-cmd_/home/ryan/Desktop/dvice_driver/module1/hello.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/ryan/Desktop/dvice_driver/module1/hello.ko /home/ryan/Desktop/dvice_driver/module1/hello.o /home/ryan/Desktop/dvice_driver/module1/hello.mod.o ;  true

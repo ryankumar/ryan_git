@@ -1,7 +1,7 @@
 obj-m := CharDriver.o
 
 
-KERNELDIR = /lib/modules/$(shell uname -r)/build
+KERNELDIR = /lib/modules/`uname -r`/build/
 PWD := $(shell pwd)
 
 

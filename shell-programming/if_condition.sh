@@ -1,4 +1,6 @@
+# comparision string
 #!/bin/sh
+<< COMMENT
 var1=abc
 var2=abc
 # string comparision
@@ -8,6 +10,8 @@ if [ $var1 = $var2 ]
  else
   echo both are not equal
 fi
+COMMENT
+
 # all the statments betwwen COMMENT are commented
 #argument comparision
 << COMMENT
@@ -25,13 +29,11 @@ fi
 COMMENT
 
 # arithmatic comparision
-<< COMMENT
  if [$# -eq 2]
    then
      echo \$1=$1,\$2=$2
   else
-     echo Command Usage :$0 <$1><$2>
+     echo Command Usage :$0 <$1> <$2>
  fi
-COMMENT
  exit 0
 

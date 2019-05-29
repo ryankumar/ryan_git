@@ -1,3 +1,4 @@
+# finding biggest 3 number
 #!/bin/sh
 if [ $# -ne 3 ]
  then

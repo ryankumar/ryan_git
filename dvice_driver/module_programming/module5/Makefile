@@ -6,11 +6,13 @@
 obj-m := hello_export_symbol.o
 obj-m += hello_using_symbol.o
 all:
-	make -C /usr/src/linux-headers-`uname -r` M=`pwd` modules
-	
+	        make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
+
 clean:
-	make -C /usr/src/linux-headers-`uname -r` M=`pwd` clean
+	        make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) clean
+
 install:
-	make -C /usr/src/linux-headers-`uname -r` M=`pwd` modules_install
+	        make -C /lib/modules/$(shell uname -r)/build  M=$(PWD)  modules_install
+
 
 
