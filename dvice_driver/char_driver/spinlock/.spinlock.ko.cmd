@@ -1,0 +1,1 @@
+cmd_/home/nmahanty/Madhab/ryan_git/dvice_driver/char_driver/spinlock/spinlock.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/nmahanty/Madhab/ryan_git/dvice_driver/char_driver/spinlock/spinlock.ko /home/nmahanty/Madhab/ryan_git/dvice_driver/char_driver/spinlock/spinlock.o /home/nmahanty/Madhab/ryan_git/dvice_driver/char_driver/spinlock/spinlock.mod.o

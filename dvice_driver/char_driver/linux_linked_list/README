@@ -1,0 +1,53 @@
+I took the source code form the previous tutorial(create_own_workqueue). First i will explain how this code works.
+Linux linked list is defined in "/lib/modules/$(uname -r)/build/include/linux/list.h".
+ 
+1. When we write the value to our device file using echo value > /dev/etx_device, it will invoke the interrupt. Because we configured the interrupt by using software. If you don’t know how it works, 
+2. Interrupt will invoke the ISR function.
+3. In ISR we are allocating work to the Workqueue.
+4. Whenever Workqueue executing, we are creating Linked List Node and adding the Node to the Linked List.
+5. When we are reading the driver using cat /dev/etx_device, printing all the nodes which is present in the Linked List using traverse.
+6. When we are removing the driver using rmmod, it will removes all the nodes in Linked List and free the memory.
+
+Note : We are not using the sysfs functions. So I kept empty sysfs functions.
+
+CREATING HEAD NODE: 
+This will create the head node in the name of Head_Node and initialize that.
+/*Declare and init the head node of the linked list*/
+	LIST_HEAD(Head_Node);
+
+CREATING NODE AND ADD THAT INTO LINKED LIST:
+This will create the node, assign the data to its member. Then finally add that node to the Linked List using list_add_tail. (This part will be present in the workqueue function)
+/*Creating Node*/
+        temp_node = kmalloc(sizeof(struct my_list), GFP_KERNEL);
+ 
+        /*Assgin the data that is received*/
+        temp_node->data = etx_value;
+ 
+        /*Init the list within the struct*/
+        INIT_LIST_HEAD(&temp_node->list);
+ 
+        /*Add Node to Linked List*/
+        list_add_tail(&temp_node->list, &Head_Node);
+
+TRAVERSING LINKED LIST:
+Here, we are traversing each nodes using list_for_each_entryand print those values. (This part will be present in the read function).
+ 	struct my_list *temp;
+        int count = 0;
+        printk(KERN_INFO "Read function\n");
+ 
+        /*Traversing Linked List and Print its Members*/
+        list_for_each_entry(temp, &Head_Node, list) {
+            printk(KERN_INFO "Node %d data = %d\n", count++, temp->data);
+        }
+ 
+        printk(KERN_INFO "Total Nodes = %d\n", count);
+
+
+DELETING LINKED LIST :
+This will traverse the each node using list_for_each_entry_safe and delete that using list_del. Finally we need to free the memory which is allocated using kmalloc.(This part will be present in the driver_exit function)
+ /* Go through the list and free the memory. */
+        struct my_list *cursor, *temp;
+        list_for_each_entry_safe(cursor, temp, &Head_Node, list) {
+            list_del(&cursor->list);
+            kfree(cursor);
+        }

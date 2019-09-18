@@ -1,0 +1,1 @@
+cmd_/home/nmahanty/Madhab/ryan_git/dvice_driver/char_driver/SYSFS/driver.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/nmahanty/Madhab/ryan_git/dvice_driver/char_driver/SYSFS/driver.ko /home/nmahanty/Madhab/ryan_git/dvice_driver/char_driver/SYSFS/driver.o /home/nmahanty/Madhab/ryan_git/dvice_driver/char_driver/SYSFS/driver.mod.o
